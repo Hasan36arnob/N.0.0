@@ -5,9 +5,9 @@ class MathViralVideo(Scene):
         # 1. Create the Hook: A simple right triangle
         triangle = Polygon(ORIGIN, 3*RIGHT, 4*UP, color=BLUE)
         labels = VGroup(
-            MathTex("a").next_to(triangle, DOWN),
-            MathTex("b").next_to(triangle, LEFT),
-            MathTex("c").next_to(triangle.get_center(), UR)
+            Text("a").next_to(triangle, DOWN),
+            Text("b").next_to(triangle, LEFT),
+            Text("c").next_to(triangle.get_center(), UR)
         )
 
         self.play(Create(triangle), Write(labels))
@@ -30,7 +30,7 @@ class MathViralVideo(Scene):
         self.add_sound("whoosh", time_offset=0.1)  # Sound effect for transformation
         
         # 3. The Big Reveal: The Formula
-        formula = MathTex("a^2 + b^2 = c^2").to_edge(UP)
+        formula = Text("a² + b² = c²").to_edge(UP)
         self.play(Write(formula))
         self.add_sound("reveal", time_offset=0.1)  # Sound effect for formula reveal
         self.play(Indicate(formula))
